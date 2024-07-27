@@ -11,13 +11,23 @@ import SDWebImage
 class PhotoCollectionThumbnailCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView?
+    weak var delegate: PhotoCollectionThumbnailDelegate?
+    
+    @IBAction func doTouch() {
+        guard let photo = photo else { return }
+        delegate?.didTouchPhoto(photo: photo)
+    }
     
     var photo: Photo? {
         didSet {
             guard let photo = photo else { return }
-            let url = URL(string: "http://localhost:3000/photo?id=\(photo.id)")
+            let url = URL(string: "http://localhost:3000/thumb?id=\(photo.id)")
             imageView?.sd_setImage(with: url)
         }
     }
     
+}
+
+protocol PhotoCollectionThumbnailDelegate: AnyObject {
+    func didTouchPhoto(photo: Photo)
 }

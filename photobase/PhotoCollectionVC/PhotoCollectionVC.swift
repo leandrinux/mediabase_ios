@@ -43,6 +43,7 @@ extension PhotoCollectionVC: UICollectionViewDataSource {
         guard let photo = viewModel.photos?[indexPath.row] else {
             return cell
         }
+        cell.delegate = self
         cell.photo = photo
         return cell
     }
@@ -58,6 +59,16 @@ extension PhotoCollectionVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let sideLength = collectionView.frame.size.width / 2
         return CGSize(width: sideLength, height: sideLength)
+    }
+    
+}
+
+extension PhotoCollectionVC: PhotoCollectionThumbnailDelegate {
+    
+    func didTouchPhoto(photo: Photo) {
+        guard let photoVC = PhotoVC.create() else { return }
+        photoVC.photo = photo
+        navigationController?.pushViewController(photoVC, animated: true)
     }
     
 }

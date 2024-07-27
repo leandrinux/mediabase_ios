@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ViC-qK-VyH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -9,10 +9,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photo CollectionVC-->
+        <!--Navigation Controller-->
+        <scene sceneID="Wjd-b7-QTf">
+            <objects>
+                <navigationController id="ViC-qK-VyH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CqS-iL-8f9">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="qXS-El-CXo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96U-0i-eNu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-680" y="-27"/>
+        </scene>
+        <!--Photobase-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="PhotoCollectionVC" customModule="photobase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Photobase" id="Y6W-OH-hqX" customClass="PhotoCollectionVC" customModule="photobase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,12 +53,24 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ci-sw-VKY">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="177"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cY-BU-lSc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="177"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <connections>
+                                                        <action selector="doTouch" destination="KYk-Te-4nN" eventType="touchUpInside" id="aa6-2A-Fmf"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="5cY-BU-lSc" firstAttribute="leading" secondItem="v46-gU-BwF" secondAttribute="leading" id="2aO-RW-cK2"/>
                                                 <constraint firstItem="6Ci-sw-VKY" firstAttribute="leading" secondItem="v46-gU-BwF" secondAttribute="leading" id="6wP-zK-u8b"/>
+                                                <constraint firstItem="5cY-BU-lSc" firstAttribute="top" secondItem="v46-gU-BwF" secondAttribute="top" id="BU8-5V-qYs"/>
+                                                <constraint firstAttribute="trailing" secondItem="5cY-BU-lSc" secondAttribute="trailing" id="ZmR-Ar-UCx"/>
                                                 <constraint firstItem="6Ci-sw-VKY" firstAttribute="top" secondItem="v46-gU-BwF" secondAttribute="top" id="aiy-nM-Qhh"/>
                                                 <constraint firstAttribute="bottom" secondItem="6Ci-sw-VKY" secondAttribute="bottom" id="aoL-zu-Vmn"/>
                                                 <constraint firstAttribute="trailing" secondItem="6Ci-sw-VKY" secondAttribute="trailing" id="bzX-AE-qjb"/>
+                                                <constraint firstAttribute="bottom" secondItem="5cY-BU-lSc" secondAttribute="bottom" id="gxm-lz-GaQ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="180" height="177"/>
@@ -65,6 +93,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WmB-cw-zMm" secondAttribute="trailing" id="vl7-9N-7Zd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="K2M-fd-K7q"/>
                     <connections>
                         <outlet property="collectionView" destination="WmB-cw-zMm" id="1UD-ys-xDl"/>
                     </connections>
