@@ -15,6 +15,9 @@ class PhotoCollectionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView?.delegate = self
+        
         Task {
             await viewModel.fetchAll()
             DispatchQueue.main.async {
@@ -42,6 +45,19 @@ extension PhotoCollectionVC: UICollectionViewDataSource {
         }
         cell.photo = photo
         return cell
+    }
+    
+}
+
+extension PhotoCollectionVC: UICollectionViewDelegate {
+    
+}
+
+extension PhotoCollectionVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let sideLength = collectionView.frame.size.width / 2
+        return CGSize(width: sideLength, height: sideLength)
     }
     
 }
