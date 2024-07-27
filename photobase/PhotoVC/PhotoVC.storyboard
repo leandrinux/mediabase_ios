@@ -12,21 +12,21 @@
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="PhotoVC" customModule="photobase" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
+                    <view key="view" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Wm-Bx-lQ6">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Wm-Bx-lQ6">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hzp-r4-Uvb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2Wm-Bx-lQ6" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="KF0-s7-Gv1"/>
-                            <constraint firstAttribute="bottom" secondItem="2Wm-Bx-lQ6" secondAttribute="bottom" id="OUO-TN-5Lw"/>
+                            <constraint firstItem="Hzp-r4-Uvb" firstAttribute="bottom" secondItem="2Wm-Bx-lQ6" secondAttribute="bottom" id="OUO-TN-5Lw"/>
                             <constraint firstAttribute="trailing" secondItem="2Wm-Bx-lQ6" secondAttribute="trailing" id="bhB-oZ-RiQ"/>
-                            <constraint firstItem="2Wm-Bx-lQ6" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="fs0-XG-wnj"/>
+                            <constraint firstItem="2Wm-Bx-lQ6" firstAttribute="top" secondItem="Hzp-r4-Uvb" secondAttribute="top" id="fs0-XG-wnj"/>
                         </constraints>
                     </view>
                     <connections>

@@ -13,7 +13,9 @@ enum HTTPMethod: String {
 }
 
 class Networking: NSObject {
-    
+
+    static let baseURL = "http://leandrim1.local:3000"
+
     func sendRequest<T:Codable, U:Codable>(method: HTTPMethod, endpoint: String, arguments: T, completion: @escaping (Result<U, Error>) -> Void) async {
         
         guard let url = URL(string: endpoint) else {

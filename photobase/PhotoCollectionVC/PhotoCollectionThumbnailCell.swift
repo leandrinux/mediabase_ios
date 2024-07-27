@@ -21,7 +21,7 @@ class PhotoCollectionThumbnailCell: UICollectionViewCell {
     var photo: Photo? {
         didSet {
             guard let photo = photo else { return }
-            let url = URL(string: "http://localhost:3000/thumb?id=\(photo.id)")
+            let url = URL(string: "\(Networking.baseURL)/thumb?id=\(photo.id)")
             imageView?.sd_setImage(with: url)
         }
     }

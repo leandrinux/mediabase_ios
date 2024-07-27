@@ -28,7 +28,7 @@ class PhotoCollectionViewModel {
     var photos: [Photo]?
     
     func fetchAll() async {
-        let endpoint = "http://localhost:3000/photos"
+        let endpoint = "\(Networking.baseURL)/photos"
         await Networking().sendRequest(method: .get, endpoint: endpoint, arguments: FetchPhotosRequest()) { (result: Result<[Photo], Error>) in
             switch result {
             case .success(let responseModel):

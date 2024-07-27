@@ -18,7 +18,7 @@ class PhotoVC: UIViewController {
     
     override func viewDidLoad() {
         guard let photo = photo else { return }
-        let url = URL(string: "http://localhost:3000/photo?id=\(photo.id)")
+        let url = URL(string: "\(Networking.baseURL)/photo?id=\(photo.id)")
         imageView?.sd_setImage(with: url)
     }
     
