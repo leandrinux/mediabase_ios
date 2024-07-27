@@ -38,6 +38,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                             <constraints>
                                                 <constraint firstItem="6Ci-sw-VKY" firstAttribute="leading" secondItem="v46-gU-BwF" secondAttribute="leading" id="6wP-zK-u8b"/>
                                                 <constraint firstItem="6Ci-sw-VKY" firstAttribute="top" secondItem="v46-gU-BwF" secondAttribute="top" id="aiy-nM-Qhh"/>
@@ -50,6 +51,9 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="p3g-qT-cAD"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -61,6 +65,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WmB-cw-zMm" secondAttribute="trailing" id="vl7-9N-7Zd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="WmB-cw-zMm" id="1UD-ys-xDl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -70,6 +77,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

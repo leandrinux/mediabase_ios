@@ -28,11 +28,8 @@ class PhotoCollectionViewModel {
     var photos: [Photo]?
     
     func fetchAll() async {
-        
-        let network = Networking()
-        
         let endpoint = "http://localhost:3000/photos"
-        await network.sendRequest(method: .get, endpoint: endpoint, arguments: FetchPhotosRequest()) { (result: Result<[Photo], Error>) in
+        await Networking().sendRequest(method: .get, endpoint: endpoint, arguments: FetchPhotosRequest()) { (result: Result<[Photo], Error>) in
             switch result {
             case .success(let responseModel):
                 self.photos = responseModel
@@ -40,7 +37,6 @@ class PhotoCollectionViewModel {
                 debugPrint(error)
             }
         }
-        
     }
     
 }
