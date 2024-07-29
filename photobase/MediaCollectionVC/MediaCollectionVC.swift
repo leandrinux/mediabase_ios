@@ -67,7 +67,7 @@ extension MediaCollectionVC: UICollectionViewDelegateFlowLayout {
 extension MediaCollectionVC: MediaCollectionThumbnailDelegate {
     
     func didTouchMedia(media: Media) {
-        guard let MediaVC = PhotoVC.create() else { return }
+        guard let MediaVC = MediaVC.create() else { return }
         MediaVC.media = media
         navigationController?.pushViewController(MediaVC, animated: true)
     }

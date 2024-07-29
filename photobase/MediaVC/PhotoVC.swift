@@ -1,6 +1,6 @@
 //
-//  PhotoVC.swift
-//  photobase
+//  MediaVC.swift
+//  Mediabase
 //
 //  Created by Leandro on 26/07/2024.
 //
@@ -8,11 +8,11 @@
 import UIKit
 import SDWebImage
 
-class PhotoVC: UIViewController {
+class MediaVC: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView?
 
-    let viewModel = PhotoViewModel()
+    let viewModel = MediaViewModel()
     
     var media: Media?
     
@@ -22,9 +22,9 @@ class PhotoVC: UIViewController {
         imageView?.sd_setImage(with: url)
     }
     
-    static func create() -> PhotoVC? {
-        let storyboard = UIStoryboard(name: "PhotoVC", bundle: Bundle.main)
-        return storyboard.instantiateInitialViewController() as? PhotoVC
+    static func create() -> MediaVC? {
+        let storyboard = UIStoryboard(name: "MediaVC", bundle: Bundle.main)
+        return storyboard.instantiateInitialViewController() as? MediaVC
     }
     
 }
