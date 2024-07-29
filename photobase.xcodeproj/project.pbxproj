@@ -11,10 +11,10 @@
 		832343832C546CB500D7A632 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343822C546CB500D7A632 /* SceneDelegate.swift */; };
 		8323438A2C546CB600D7A632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832343892C546CB600D7A632 /* Assets.xcassets */; };
 		8323438D2C546CB600D7A632 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8323438C2C546CB600D7A632 /* Base */; };
-		832343952C546D0B00D7A632 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343942C546D0B00D7A632 /* PhotoCollectionVC.swift */; };
-		832343972C546D7600D7A632 /* PhotoCollectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832343962C546D7600D7A632 /* PhotoCollectionVC.storyboard */; };
-		8323439A2C54709A00D7A632 /* PhotoCollectionThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343992C54709A00D7A632 /* PhotoCollectionThumbnailCell.swift */; };
-		8323439C2C54711900D7A632 /* PhotoCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8323439B2C54711900D7A632 /* PhotoCollectionViewModel.swift */; };
+		832343952C546D0B00D7A632 /* MediaCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343942C546D0B00D7A632 /* MediaCollectionVC.swift */; };
+		832343972C546D7600D7A632 /* MediaCollectionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832343962C546D7600D7A632 /* MediaCollectionVC.storyboard */; };
+		8323439A2C54709A00D7A632 /* MediaCollectionThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343992C54709A00D7A632 /* MediaCollectionThumbnailCell.swift */; };
+		8323439C2C54711900D7A632 /* MediaCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8323439B2C54711900D7A632 /* MediaCollectionViewModel.swift */; };
 		832343A22C54722A00D7A632 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343A12C54722A00D7A632 /* Networking.swift */; };
 		832343A52C5480B400D7A632 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 832343A42C5480B400D7A632 /* SDWebImage */; };
 		832343A72C5480B400D7A632 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 832343A62C5480B400D7A632 /* SDWebImageMapKit */; };
@@ -30,10 +30,10 @@
 		832343892C546CB600D7A632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8323438C2C546CB600D7A632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8323438E2C546CB600D7A632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		832343942C546D0B00D7A632 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionVC.swift; sourceTree = "<group>"; };
-		832343962C546D7600D7A632 /* PhotoCollectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoCollectionVC.storyboard; sourceTree = "<group>"; };
-		832343992C54709A00D7A632 /* PhotoCollectionThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionThumbnailCell.swift; sourceTree = "<group>"; };
-		8323439B2C54711900D7A632 /* PhotoCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewModel.swift; sourceTree = "<group>"; };
+		832343942C546D0B00D7A632 /* MediaCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionVC.swift; sourceTree = "<group>"; };
+		832343962C546D7600D7A632 /* MediaCollectionVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MediaCollectionVC.storyboard; sourceTree = "<group>"; };
+		832343992C54709A00D7A632 /* MediaCollectionThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionThumbnailCell.swift; sourceTree = "<group>"; };
+		8323439B2C54711900D7A632 /* MediaCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewModel.swift; sourceTree = "<group>"; };
 		832343A12C54722A00D7A632 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		832343A92C54888700D7A632 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
 		832343AB2C5488A500D7A632 /* PhotoVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoVC.storyboard; sourceTree = "<group>"; };
@@ -87,10 +87,10 @@
 		832343982C54707700D7A632 /* PhotoCollectionVC */ = {
 			isa = PBXGroup;
 			children = (
-				832343942C546D0B00D7A632 /* PhotoCollectionVC.swift */,
-				832343962C546D7600D7A632 /* PhotoCollectionVC.storyboard */,
-				832343992C54709A00D7A632 /* PhotoCollectionThumbnailCell.swift */,
-				8323439B2C54711900D7A632 /* PhotoCollectionViewModel.swift */,
+				832343942C546D0B00D7A632 /* MediaCollectionVC.swift */,
+				832343962C546D7600D7A632 /* MediaCollectionVC.storyboard */,
+				832343992C54709A00D7A632 /* MediaCollectionThumbnailCell.swift */,
+				8323439B2C54711900D7A632 /* MediaCollectionViewModel.swift */,
 			);
 			path = PhotoCollectionVC;
 			sourceTree = "<group>";
@@ -181,7 +181,7 @@
 				832343AC2C5488A500D7A632 /* PhotoVC.storyboard in Resources */,
 				8323438A2C546CB600D7A632 /* Assets.xcassets in Resources */,
 				8323438D2C546CB600D7A632 /* Base in Resources */,
-				832343972C546D7600D7A632 /* PhotoCollectionVC.storyboard in Resources */,
+				832343972C546D7600D7A632 /* MediaCollectionVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,11 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				832343952C546D0B00D7A632 /* PhotoCollectionVC.swift in Sources */,
+				832343952C546D0B00D7A632 /* MediaCollectionVC.swift in Sources */,
 				832343812C546CB500D7A632 /* AppDelegate.swift in Sources */,
 				832343832C546CB500D7A632 /* SceneDelegate.swift in Sources */,
-				8323439A2C54709A00D7A632 /* PhotoCollectionThumbnailCell.swift in Sources */,
-				8323439C2C54711900D7A632 /* PhotoCollectionViewModel.swift in Sources */,
+				8323439A2C54709A00D7A632 /* MediaCollectionThumbnailCell.swift in Sources */,
+				8323439C2C54711900D7A632 /* MediaCollectionViewModel.swift in Sources */,
 				832343AE2C5488D900D7A632 /* PhotoViewModel.swift in Sources */,
 				832343A22C54722A00D7A632 /* Networking.swift in Sources */,
 				832343AA2C54888700D7A632 /* PhotoVC.swift in Sources */,
@@ -347,17 +347,20 @@
 				DEVELOPMENT_TEAM = XMMLGH5VMA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = photobase/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Mediabase;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = PhotoCollectionVC;
+				INFOPLIST_KEY_UIMainStoryboardFile = MediaCollectionVC;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leandrinux.photobase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leandrinux.mediabase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -375,17 +378,20 @@
 				DEVELOPMENT_TEAM = XMMLGH5VMA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = photobase/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Mediabase;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = PhotoCollectionVC;
+				INFOPLIST_KEY_UIMainStoryboardFile = MediaCollectionVC;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leandrinux.photobase;
+				PRODUCT_BUNDLE_IDENTIFIER = com.leandrinux.mediabase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

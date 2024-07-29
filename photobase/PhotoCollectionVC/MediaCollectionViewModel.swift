@@ -1,13 +1,13 @@
 //
-//  PhotoCollectionViewModel.swift
-//  photobase
+//  MediaCollectionViewModel.swift
+//  Mediabase
 //
 //  Created by Leandro on 26/07/2024.
 //
 
 import Foundation
 
-struct FetchPhotosRequest: Codable {
+struct FetchMediaRequest: Codable {
     
 }
 
@@ -23,19 +23,19 @@ struct Media: Hashable, Codable {
     }
 }
 
-class PhotoCollectionViewModel {
+class MediaCollectionViewModel {
     
     var media: [Media]? {
         didSet {
             guard let media = media else { return }
-            print("Retrieved \(media.count) photos")
+            print("Retrieved \(media.count) media")
         }
     }
     
     func fetchAll() async {
-        print("Fetching all photos")
+        print("Fetching all media")
         let endpoint = "\(Networking.baseURL)/media"
-        await Networking().sendRequest(method: .get, endpoint: endpoint, arguments: FetchPhotosRequest()) { (result: Result<[Media], Error>) in
+        await Networking().sendRequest(method: .get, endpoint: endpoint, arguments: FetchMediaRequest()) { (result: Result<[Media], Error>) in
             switch result {
             case .success(let responseModel):
                 self.media = responseModel

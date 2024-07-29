@@ -1,17 +1,17 @@
 //
-//  PhotoCollectionVC.swift
-//  photobase
+//  MediaCollectionVC.swift
+//  Mediabase
 //
 //  Created by Leandro on 26/07/2024.
 //
 
 import UIKit
 
-class PhotoCollectionVC: UIViewController {
+class MediaCollectionVC: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView?
 
-    let viewModel = PhotoCollectionViewModel()
+    let viewModel = MediaCollectionViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +33,14 @@ class PhotoCollectionVC: UIViewController {
 
 }
 
-extension PhotoCollectionVC: UICollectionViewDataSource {
+extension MediaCollectionVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.media?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbnailCell", for: indexPath) as! PhotoCollectionThumbnailCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbnailCell", for: indexPath) as! MediaCollectionThumbnailCell
         guard let media = viewModel.media?[indexPath.row] else {
             return cell
         }
@@ -51,11 +51,11 @@ extension PhotoCollectionVC: UICollectionViewDataSource {
     
 }
 
-extension PhotoCollectionVC: UICollectionViewDelegate {
+extension MediaCollectionVC: UICollectionViewDelegate {
     
 }
 
-extension PhotoCollectionVC: UICollectionViewDelegateFlowLayout {
+extension MediaCollectionVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let sideLength = collectionView.frame.size.width / 2
@@ -64,12 +64,12 @@ extension PhotoCollectionVC: UICollectionViewDelegateFlowLayout {
     
 }
 
-extension PhotoCollectionVC: PhotoCollectionThumbnailDelegate {
+extension MediaCollectionVC: MediaCollectionThumbnailDelegate {
     
     func didTouchMedia(media: Media) {
-        guard let photoVC = PhotoVC.create() else { return }
-        photoVC.media = media
-        navigationController?.pushViewController(photoVC, animated: true)
+        guard let MediaVC = PhotoVC.create() else { return }
+        MediaVC.media = media
+        navigationController?.pushViewController(MediaVC, animated: true)
     }
     
 }

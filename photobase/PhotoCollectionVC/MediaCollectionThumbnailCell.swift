@@ -1,6 +1,6 @@
 //
-//  PhotoCollectionThumbnailCell.swift
-//  photobase
+//  MediaCollectionThumbnailCell.swift
+//  Mediabase
 //
 //  Created by Leandro on 26/07/2024.
 //
@@ -8,10 +8,10 @@
 import UIKit
 import SDWebImage
 
-class PhotoCollectionThumbnailCell: UICollectionViewCell {
+class MediaCollectionThumbnailCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView?
-    weak var delegate: PhotoCollectionThumbnailDelegate?
+    weak var delegate: MediaCollectionThumbnailDelegate?
     
     @IBAction func doTouch() {
         guard let media = media else { return }
@@ -28,6 +28,6 @@ class PhotoCollectionThumbnailCell: UICollectionViewCell {
     
 }
 
-protocol PhotoCollectionThumbnailDelegate: AnyObject {
+protocol MediaCollectionThumbnailDelegate: AnyObject {
     func didTouchMedia(media: Media)
 }
