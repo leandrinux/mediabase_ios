@@ -27,6 +27,7 @@ class PhotoCollectionVC: UIViewController {
     }
 
     func updateCollectionView() {
+        print("Updating collection view")
         collectionView?.reloadData()
     }
 
@@ -35,16 +36,16 @@ class PhotoCollectionVC: UIViewController {
 extension PhotoCollectionVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.photos?.count ?? 0
+        return viewModel.media?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThumbnailCell", for: indexPath) as! PhotoCollectionThumbnailCell
-        guard let photo = viewModel.photos?[indexPath.row] else {
+        guard let media = viewModel.media?[indexPath.row] else {
             return cell
         }
         cell.delegate = self
-        cell.photo = photo
+        cell.media = media
         return cell
     }
     
@@ -65,9 +66,9 @@ extension PhotoCollectionVC: UICollectionViewDelegateFlowLayout {
 
 extension PhotoCollectionVC: PhotoCollectionThumbnailDelegate {
     
-    func didTouchPhoto(photo: Photo) {
+    func didTouchMedia(media: Media) {
         guard let photoVC = PhotoVC.create() else { return }
-        photoVC.photo = photo
+        photoVC.media = media
         navigationController?.pushViewController(photoVC, animated: true)
     }
     

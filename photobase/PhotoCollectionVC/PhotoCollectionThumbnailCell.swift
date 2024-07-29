@@ -14,14 +14,14 @@ class PhotoCollectionThumbnailCell: UICollectionViewCell {
     weak var delegate: PhotoCollectionThumbnailDelegate?
     
     @IBAction func doTouch() {
-        guard let photo = photo else { return }
-        delegate?.didTouchPhoto(photo: photo)
+        guard let media = media else { return }
+        delegate?.didTouchMedia(media: media)
     }
     
-    var photo: Photo? {
+    var media: Media? {
         didSet {
-            guard let photo = photo else { return }
-            let url = URL(string: "\(Networking.baseURL)/thumb?id=\(photo.id)")
+            guard let media = media else { return }
+            let url = URL(string: "\(Networking.baseURL)/thumb?id=\(media.ID)")
             imageView?.sd_setImage(with: url)
         }
     }
@@ -29,5 +29,5 @@ class PhotoCollectionThumbnailCell: UICollectionViewCell {
 }
 
 protocol PhotoCollectionThumbnailDelegate: AnyObject {
-    func didTouchPhoto(photo: Photo)
+    func didTouchMedia(media: Media)
 }

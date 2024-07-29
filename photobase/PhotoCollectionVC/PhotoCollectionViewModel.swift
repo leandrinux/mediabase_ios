@@ -11,13 +11,13 @@ struct FetchPhotosRequest: Codable {
     
 }
 
-struct Photo: Hashable, Codable {
-    let id: Int
+struct Media: Hashable, Codable {
+    let ID: Int
     var latitude: Double?
     var longitude: Double?
     
     private enum CodingKeys: String, CodingKey {
-        case id = "photo_id"
+        case ID = "media_id"
         case latitude
         case longitude
     }
@@ -25,14 +25,20 @@ struct Photo: Hashable, Codable {
 
 class PhotoCollectionViewModel {
     
-    var photos: [Photo]?
+    var media: [Media]? {
+        didSet {
+            guard let media = media else { return }
+            print("Retrieved \(media.count) photos")
+        }
+    }
     
     func fetchAll() async {
-        let endpoint = "\(Networking.baseURL)/photos"
-        await Networking().sendRequest(method: .get, endpoint: endpoint, arguments: FetchPhotosRequest()) { (result: Result<[Photo], Error>) in
+        print("Fetching all photos")
+        let endpoint = "\(Networking.baseURL)/media"
+        await Networking().sendRequest(method: .get, endpoint: endpoint, arguments: FetchPhotosRequest()) { (result: Result<[Media], Error>) in
             switch result {
             case .success(let responseModel):
-                self.photos = responseModel
+                self.media = responseModel
             case .failure(let error):
                 debugPrint(error)
             }

@@ -14,11 +14,11 @@ class PhotoVC: UIViewController {
 
     let viewModel = PhotoViewModel()
     
-    var photo: Photo?
+    var media: Media?
     
     override func viewDidLoad() {
-        guard let photo = photo else { return }
-        let url = URL(string: "\(Networking.baseURL)/photo?id=\(photo.id)")
+        guard let media = media else { return }
+        let url = URL(string: "\(Networking.baseURL)/file?id=\(media.ID)")
         imageView?.sd_setImage(with: url)
     }
     
