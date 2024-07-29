@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8323437D2C546CB500D7A632 /* photobase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photobase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8323437D2C546CB500D7A632 /* mediabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mediabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		832343802C546CB500D7A632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		832343822C546CB500D7A632 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		832343892C546CB600D7A632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		832343742C546CB500D7A632 = {
 			isa = PBXGroup;
 			children = (
-				8323437F2C546CB500D7A632 /* photobase */,
+				8323437F2C546CB500D7A632 /* mediabase */,
 				8323437E2C546CB500D7A632 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,12 +64,12 @@
 		8323437E2C546CB500D7A632 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8323437D2C546CB500D7A632 /* photobase.app */,
+				8323437D2C546CB500D7A632 /* mediabase.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8323437F2C546CB500D7A632 /* photobase */ = {
+		8323437F2C546CB500D7A632 /* mediabase */ = {
 			isa = PBXGroup;
 			children = (
 				832343A02C54721900D7A632 /* Networking */,
@@ -81,7 +81,7 @@
 				8323438B2C546CB600D7A632 /* LaunchScreen.storyboard */,
 				8323438E2C546CB600D7A632 /* Info.plist */,
 			);
-			path = photobase;
+			path = mediabase;
 			sourceTree = "<group>";
 		};
 		832343982C54707700D7A632 /* MediaCollectionVC */ = {
@@ -116,9 +116,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8323437C2C546CB500D7A632 /* photobase */ = {
+		8323437C2C546CB500D7A632 /* mediabase */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 832343912C546CB600D7A632 /* Build configuration list for PBXNativeTarget "photobase" */;
+			buildConfigurationList = 832343912C546CB600D7A632 /* Build configuration list for PBXNativeTarget "mediabase" */;
 			buildPhases = (
 				832343792C546CB500D7A632 /* Sources */,
 				8323437A2C546CB500D7A632 /* Frameworks */,
@@ -128,13 +128,13 @@
 			);
 			dependencies = (
 			);
-			name = photobase;
+			name = mediabase;
 			packageProductDependencies = (
 				832343A42C5480B400D7A632 /* SDWebImage */,
 				832343A62C5480B400D7A632 /* SDWebImageMapKit */,
 			);
 			productName = photobase;
-			productReference = 8323437D2C546CB500D7A632 /* photobase.app */;
+			productReference = 8323437D2C546CB500D7A632 /* mediabase.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -152,7 +152,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 832343782C546CB500D7A632 /* Build configuration list for PBXProject "photobase" */;
+			buildConfigurationList = 832343782C546CB500D7A632 /* Build configuration list for PBXProject "mediabase" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -168,7 +168,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8323437C2C546CB500D7A632 /* photobase */,
+				8323437C2C546CB500D7A632 /* mediabase */,
 			);
 		};
 /* End PBXProject section */
@@ -346,7 +346,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XMMLGH5VMA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = photobase/Info.plist;
+				INFOPLIST_FILE = mediabase/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Mediabase;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -377,7 +377,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XMMLGH5VMA;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = photobase/Info.plist;
+				INFOPLIST_FILE = mediabase/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Mediabase;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -402,7 +402,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		832343782C546CB500D7A632 /* Build configuration list for PBXProject "photobase" */ = {
+		832343782C546CB500D7A632 /* Build configuration list for PBXProject "mediabase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8323438F2C546CB600D7A632 /* Debug */,
@@ -411,7 +411,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		832343912C546CB600D7A632 /* Build configuration list for PBXNativeTarget "photobase" */ = {
+		832343912C546CB600D7A632 /* Build configuration list for PBXNativeTarget "mediabase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				832343922C546CB600D7A632 /* Debug */,
