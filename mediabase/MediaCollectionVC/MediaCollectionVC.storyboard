@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,6 +16,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CqS-iL-8f9">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="qXS-El-CXo"/>
@@ -24,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-680" y="-27"/>
         </scene>
-        <!--Photobase-->
+        <!--Mediabase-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController title="Photobase" id="Y6W-OH-hqX" customClass="MediaCollectionVC" customModule="mediabase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="MediaCollectionVC" customModule="mediabase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +39,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WmB-cw-zMm">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="gh1-vf-jz3">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="gh1-vf-jz3">
                                     <size key="itemSize" width="180" height="177"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -52,6 +56,13 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ci-sw-VKY">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="177"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNH-Zm-8tP">
+                                                    <rect key="frame" x="10" y="10" width="42" height="21"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemRedColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cY-BU-lSc">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="177"/>
                                                     <state key="normal" title="Button"/>
@@ -69,12 +80,15 @@
                                                 <constraint firstItem="6Ci-sw-VKY" firstAttribute="top" secondItem="v46-gU-BwF" secondAttribute="top" id="aiy-nM-Qhh"/>
                                                 <constraint firstAttribute="bottom" secondItem="6Ci-sw-VKY" secondAttribute="bottom" id="aoL-zu-Vmn"/>
                                                 <constraint firstAttribute="trailing" secondItem="6Ci-sw-VKY" secondAttribute="trailing" id="bzX-AE-qjb"/>
+                                                <constraint firstItem="aNH-Zm-8tP" firstAttribute="leading" secondItem="v46-gU-BwF" secondAttribute="leading" constant="10" id="cMM-Fs-e5u"/>
+                                                <constraint firstItem="aNH-Zm-8tP" firstAttribute="top" secondItem="v46-gU-BwF" secondAttribute="top" constant="10" id="gj0-vE-EH0"/>
                                                 <constraint firstAttribute="bottom" secondItem="5cY-BU-lSc" secondAttribute="bottom" id="gxm-lz-GaQ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="180" height="177"/>
                                         <connections>
                                             <outlet property="imageView" destination="6Ci-sw-VKY" id="QR9-cG-eAo"/>
+                                            <outlet property="number" destination="aNH-Zm-8tP" id="SEU-l6-ZsF"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -101,7 +115,11 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WmB-cw-zMm" secondAttribute="trailing" id="vl7-9N-7Zd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="K2M-fd-K7q"/>
+                    <navigationItem key="navigationItem" title="Mediabase" id="K2M-fd-K7q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IWz-zu-7C1">
+                            <color key="tintColor" systemColor="systemTealColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="WmB-cw-zMm" id="1UD-ys-xDl"/>
                     </connections>
@@ -113,5 +131,11 @@
     </scenes>
     <resources>
         <image name="TopGradient" width="99" height="280"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

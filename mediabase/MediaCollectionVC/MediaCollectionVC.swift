@@ -15,9 +15,7 @@ class MediaCollectionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         collectionView?.delegate = self
-        
         Task {
             await viewModel.fetchAll()
             DispatchQueue.main.async {
@@ -58,7 +56,7 @@ extension MediaCollectionVC: UICollectionViewDelegate {
 extension MediaCollectionVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let sideLength = collectionView.frame.size.width / 3 - 1
+        let sideLength = (collectionView.frame.size.width - 2) / 3 
         return CGSize(width: sideLength, height: sideLength)
     }
     

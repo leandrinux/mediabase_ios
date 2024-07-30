@@ -11,6 +11,8 @@ import SDWebImage
 class MediaCollectionThumbnailCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView?
+    @IBOutlet weak var number: UILabel?
+    
     weak var delegate: MediaCollectionThumbnailDelegate?
     
     @IBAction func doTouch() {
@@ -22,8 +24,15 @@ class MediaCollectionThumbnailCell: UICollectionViewCell {
         didSet {
             guard let media = media else { return }
             let url = URL(string: "\(Networking.baseURL)/thumb?id=\(media.ID)")
+            number?.text = "\(media.ID)"
             imageView?.sd_setImage(with: url)
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.imageView?.sd_cancelCurrentImageLoad()
+        self.imageView?.image = UIImage()
     }
     
 }
