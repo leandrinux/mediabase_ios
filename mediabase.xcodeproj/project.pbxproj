@@ -21,6 +21,7 @@
 		832343AA2C54888700D7A632 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343A92C54888700D7A632 /* PhotoVC.swift */; };
 		832343AC2C5488A500D7A632 /* MediaVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832343AB2C5488A500D7A632 /* MediaVC.storyboard */; };
 		832343AE2C5488D900D7A632 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343AD2C5488D900D7A632 /* PhotoViewModel.swift */; };
+		83F9F5362C58746F00C8EE36 /* MediaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9F5352C58746F00C8EE36 /* MediaNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		832343A92C54888700D7A632 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
 		832343AB2C5488A500D7A632 /* MediaVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MediaVC.storyboard; sourceTree = "<group>"; };
 		832343AD2C5488D900D7A632 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		83F9F5352C58746F00C8EE36 /* MediaNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				832343962C546D7600D7A632 /* MediaCollectionVC.storyboard */,
 				832343992C54709A00D7A632 /* MediaCollectionThumbnailCell.swift */,
 				8323439B2C54711900D7A632 /* MediaCollectionViewModel.swift */,
+				83F9F5352C58746F00C8EE36 /* MediaNavigationController.swift */,
 			);
 			path = MediaCollectionVC;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				8323439A2C54709A00D7A632 /* MediaCollectionThumbnailCell.swift in Sources */,
 				8323439C2C54711900D7A632 /* MediaCollectionViewModel.swift in Sources */,
 				832343AE2C5488D900D7A632 /* PhotoViewModel.swift in Sources */,
+				83F9F5362C58746F00C8EE36 /* MediaNavigationController.swift in Sources */,
 				832343A22C54722A00D7A632 /* Networking.swift in Sources */,
 				832343AA2C54888700D7A632 /* PhotoVC.swift in Sources */,
 			);

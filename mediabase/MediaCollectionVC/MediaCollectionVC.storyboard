@@ -4,15 +4,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Media Navigation Controller-->
         <scene sceneID="Wjd-b7-QTf">
             <objects>
-                <navigationController id="ViC-qK-VyH" sceneMemberID="viewController">
+                <navigationController id="ViC-qK-VyH" customClass="MediaNavigationController" customModule="mediabase" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CqS-iL-8f9">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -35,8 +34,8 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WmB-cw-zMm">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gh1-vf-jz3">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="gh1-vf-jz3">
                                     <size key="itemSize" width="180" height="177"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -83,12 +82,21 @@
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="p3g-qT-cAD"/>
                                 </connections>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopGradient" translatesAutoresizingMaskIntoConstraints="NO" id="WiR-z3-6b3">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="qD4-am-Jvn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WiR-z3-6b3" secondAttribute="trailing" id="285-LT-CuX"/>
                             <constraint firstItem="WmB-cw-zMm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6BR-Yj-RY7"/>
+                            <constraint firstItem="WiR-z3-6b3" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="B7M-tl-2lS"/>
                             <constraint firstAttribute="bottom" secondItem="WmB-cw-zMm" secondAttribute="bottom" id="Seh-0L-k7A"/>
+                            <constraint firstItem="WiR-z3-6b3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ii3-Zk-VYr"/>
                             <constraint firstAttribute="top" secondItem="WmB-cw-zMm" secondAttribute="top" id="osc-mU-iRm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WmB-cw-zMm" secondAttribute="trailing" id="vl7-9N-7Zd"/>
                         </constraints>
@@ -104,8 +112,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="TopGradient" width="99" height="280"/>
     </resources>
 </document>
