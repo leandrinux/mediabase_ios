@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83165E282C5A8F2400C84C0D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 83165E272C5A8F2400C84C0D /* SnapKit */; };
+		83165E2A2C5A8F2400C84C0D /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 83165E292C5A8F2400C84C0D /* SnapKit-Dynamic */; };
 		832343812C546CB500D7A632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343802C546CB500D7A632 /* AppDelegate.swift */; };
 		832343832C546CB500D7A632 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343822C546CB500D7A632 /* SceneDelegate.swift */; };
 		8323438A2C546CB600D7A632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832343892C546CB600D7A632 /* Assets.xcassets */; };
@@ -18,9 +20,9 @@
 		832343A22C54722A00D7A632 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343A12C54722A00D7A632 /* Networking.swift */; };
 		832343A52C5480B400D7A632 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 832343A42C5480B400D7A632 /* SDWebImage */; };
 		832343A72C5480B400D7A632 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 832343A62C5480B400D7A632 /* SDWebImageMapKit */; };
-		832343AA2C54888700D7A632 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343A92C54888700D7A632 /* PhotoVC.swift */; };
+		832343AA2C54888700D7A632 /* MediaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343A92C54888700D7A632 /* MediaVC.swift */; };
 		832343AC2C5488A500D7A632 /* MediaVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832343AB2C5488A500D7A632 /* MediaVC.storyboard */; };
-		832343AE2C5488D900D7A632 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343AD2C5488D900D7A632 /* PhotoViewModel.swift */; };
+		832343AE2C5488D900D7A632 /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343AD2C5488D900D7A632 /* MediaViewModel.swift */; };
 		83F9F5362C58746F00C8EE36 /* MediaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9F5352C58746F00C8EE36 /* MediaNavigationController.swift */; };
 		83F9F5392C59DBCA00C8EE36 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 83F9F5382C59DBCA00C8EE36 /* Alamofire */; };
 		83F9F53B2C59DBCA00C8EE36 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 83F9F53A2C59DBCA00C8EE36 /* AlamofireDynamic */; };
@@ -39,9 +41,9 @@
 		832343992C54709A00D7A632 /* MediaCollectionThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionThumbnailCell.swift; sourceTree = "<group>"; };
 		8323439B2C54711900D7A632 /* MediaCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCollectionViewModel.swift; sourceTree = "<group>"; };
 		832343A12C54722A00D7A632 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		832343A92C54888700D7A632 /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
+		832343A92C54888700D7A632 /* MediaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVC.swift; sourceTree = "<group>"; };
 		832343AB2C5488A500D7A632 /* MediaVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MediaVC.storyboard; sourceTree = "<group>"; };
-		832343AD2C5488D900D7A632 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		832343AD2C5488D900D7A632 /* MediaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaViewModel.swift; sourceTree = "<group>"; };
 		83F9F5352C58746F00C8EE36 /* MediaNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaNavigationController.swift; sourceTree = "<group>"; };
 		83F9F53D2C5A845900C8EE36 /* NIKEA.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NIKEA.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,6 +57,8 @@
 				83F9F53B2C59DBCA00C8EE36 /* AlamofireDynamic in Frameworks */,
 				832343A72C5480B400D7A632 /* SDWebImageMapKit in Frameworks */,
 				832343A52C5480B400D7A632 /* SDWebImage in Frameworks */,
+				83165E282C5A8F2400C84C0D /* SnapKit in Frameworks */,
+				83165E2A2C5A8F2400C84C0D /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,9 +118,9 @@
 		832343A82C54887100D7A632 /* MediaVC */ = {
 			isa = PBXGroup;
 			children = (
-				832343A92C54888700D7A632 /* PhotoVC.swift */,
+				832343A92C54888700D7A632 /* MediaVC.swift */,
 				832343AB2C5488A500D7A632 /* MediaVC.storyboard */,
-				832343AD2C5488D900D7A632 /* PhotoViewModel.swift */,
+				832343AD2C5488D900D7A632 /* MediaViewModel.swift */,
 			);
 			path = MediaVC;
 			sourceTree = "<group>";
@@ -152,6 +156,8 @@
 				832343A62C5480B400D7A632 /* SDWebImageMapKit */,
 				83F9F5382C59DBCA00C8EE36 /* Alamofire */,
 				83F9F53A2C59DBCA00C8EE36 /* AlamofireDynamic */,
+				83165E272C5A8F2400C84C0D /* SnapKit */,
+				83165E292C5A8F2400C84C0D /* SnapKit-Dynamic */,
 			);
 			productName = photobase;
 			productReference = 8323437D2C546CB500D7A632 /* mediabase.app */;
@@ -184,6 +190,7 @@
 			packageReferences = (
 				832343A32C5480B300D7A632 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				83F9F5372C59DBCA00C8EE36 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				83165E262C5A8F2400C84C0D /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 8323437E2C546CB500D7A632 /* Products */;
 			projectDirPath = "";
@@ -219,10 +226,10 @@
 				832343832C546CB500D7A632 /* SceneDelegate.swift in Sources */,
 				8323439A2C54709A00D7A632 /* MediaCollectionThumbnailCell.swift in Sources */,
 				8323439C2C54711900D7A632 /* MediaCollectionViewModel.swift in Sources */,
-				832343AE2C5488D900D7A632 /* PhotoViewModel.swift in Sources */,
+				832343AE2C5488D900D7A632 /* MediaViewModel.swift in Sources */,
 				83F9F5362C58746F00C8EE36 /* MediaNavigationController.swift in Sources */,
 				832343A22C54722A00D7A632 /* Networking.swift in Sources */,
-				832343AA2C54888700D7A632 /* PhotoVC.swift in Sources */,
+				832343AA2C54888700D7A632 /* MediaVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +453,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		83165E262C5A8F2400C84C0D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		832343A32C5480B300D7A632 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -465,6 +480,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		83165E272C5A8F2400C84C0D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83165E262C5A8F2400C84C0D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		83165E292C5A8F2400C84C0D /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83165E262C5A8F2400C84C0D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
 		832343A42C5480B400D7A632 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 832343A32C5480B300D7A632 /* XCRemoteSwiftPackageReference "SDWebImage" */;

@@ -115,14 +115,47 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="WmB-cw-zMm" id="1UD-ys-xDl"/>
+                        <outlet property="emptyView" destination="Qmh-2O-83U" id="KKL-zb-LPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" id="Qmh-2O-83U" userLabel="EmptyView">
+                    <rect key="frame" x="0.0" y="0.0" width="331" height="350"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhotoStack" translatesAutoresizingMaskIntoConstraints="NO" id="HO4-Pf-27Q">
+                            <rect key="frame" x="115.66666666666669" y="59" width="100" height="100"/>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="0mu-P3-ybn"/>
+                                <constraint firstAttribute="width" secondItem="HO4-Pf-27Q" secondAttribute="height" multiplier="1:1" id="1rl-wd-Gnw"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Once you upload your photos they will appear here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbp-69-1MK">
+                            <rect key="frame" x="65.666666666666686" y="191" width="200" height="61"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="Cq2-fM-5vZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="fsx-vl-mvE"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="jbp-69-1MK" firstAttribute="centerX" secondItem="HO4-Pf-27Q" secondAttribute="centerX" id="5iH-nQ-YeK"/>
+                        <constraint firstItem="HO4-Pf-27Q" firstAttribute="top" secondItem="Qmh-2O-83U" secondAttribute="top" constant="59" id="HlT-fi-Jxb"/>
+                        <constraint firstItem="HO4-Pf-27Q" firstAttribute="centerX" secondItem="Qmh-2O-83U" secondAttribute="centerX" id="MBI-Fh-YRj"/>
+                        <constraint firstItem="jbp-69-1MK" firstAttribute="top" secondItem="HO4-Pf-27Q" secondAttribute="bottom" constant="32" id="v9B-iU-15C"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
+        <image name="PhotoStack" width="512" height="512"/>
         <image name="TopGradient" width="99" height="280"/>
         <systemColor name="systemTealColor">
             <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

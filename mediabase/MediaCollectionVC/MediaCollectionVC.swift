@@ -7,10 +7,12 @@
 
 import UIKit
 import PhotosUI
+import SnapKit
 
 class MediaCollectionVC: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView?
+    @IBOutlet var emptyView: UIView?
 
     let viewModel = MediaCollectionViewModel()
     let refreshControl = UIRefreshControl()
@@ -18,10 +20,26 @@ class MediaCollectionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        collectionView?.delegate = self
+        
+        // Pull to refresh
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        collectionView?.addSubview(refreshControl) // not required when using UITableViewController
+        collectionView?.addSubview(refreshControl)
+
+        // Empty view
+        if let emptyView = emptyView {
+            emptyView.isHidden = true
+            view.addSubview(emptyView)
+            emptyView.snp.makeConstraints { (maker) in
+                maker.centerX.equalToSuperview()
+                maker.top.equalToSuperview().offset(100)
+                maker.width.equalTo(300)
+                maker.height.equalTo(300)
+            }
+        }
+        
+        // Load data into collection view
+        collectionView?.delegate = self
         reloadCollectionView()
     }
     
@@ -29,6 +47,7 @@ class MediaCollectionVC: UIViewController {
         Task {
             await viewModel.fetchAll()
             DispatchQueue.main.async {
+                self.emptyView?.isHidden = (self.viewModel.media?.count ?? 0) > 0
                 self.collectionView?.reloadData()
                 self.refreshControl.endRefreshing()
             }
