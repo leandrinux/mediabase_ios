@@ -56,13 +56,6 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ci-sw-VKY">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="177"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNH-Zm-8tP">
-                                                    <rect key="frame" x="10" y="10" width="42" height="21"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" systemColor="systemRedColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cY-BU-lSc">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="177"/>
                                                     <state key="normal" title="Button"/>
@@ -80,15 +73,12 @@
                                                 <constraint firstItem="6Ci-sw-VKY" firstAttribute="top" secondItem="v46-gU-BwF" secondAttribute="top" id="aiy-nM-Qhh"/>
                                                 <constraint firstAttribute="bottom" secondItem="6Ci-sw-VKY" secondAttribute="bottom" id="aoL-zu-Vmn"/>
                                                 <constraint firstAttribute="trailing" secondItem="6Ci-sw-VKY" secondAttribute="trailing" id="bzX-AE-qjb"/>
-                                                <constraint firstItem="aNH-Zm-8tP" firstAttribute="leading" secondItem="v46-gU-BwF" secondAttribute="leading" constant="10" id="cMM-Fs-e5u"/>
-                                                <constraint firstItem="aNH-Zm-8tP" firstAttribute="top" secondItem="v46-gU-BwF" secondAttribute="top" constant="10" id="gj0-vE-EH0"/>
                                                 <constraint firstAttribute="bottom" secondItem="5cY-BU-lSc" secondAttribute="bottom" id="gxm-lz-GaQ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="180" height="177"/>
                                         <connections>
                                             <outlet property="imageView" destination="6Ci-sw-VKY" id="QR9-cG-eAo"/>
-                                            <outlet property="number" destination="aNH-Zm-8tP" id="SEU-l6-ZsF"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -134,9 +124,6 @@
     </scenes>
     <resources>
         <image name="TopGradient" width="99" height="280"/>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

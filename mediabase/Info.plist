@@ -23,6 +23,10 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This app wants to take pictures.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NIKEA.otf</string>
+	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app wants to use your photos.</string>
 </dict>

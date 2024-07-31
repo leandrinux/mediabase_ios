@@ -14,10 +14,12 @@ class MediaNavigationController: UINavigationController {
         
         UINavigationBar.appearance().shadowImage = UIImage()
         
+        guard let font = UIFont(name: "NIKEARegular", size: 15) else { return }
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
         navigationBarAppearance.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor.white
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: font
         ]
         navigationBarAppearance.backgroundColor = UIColor.clear
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance

@@ -24,6 +24,7 @@
 		83F9F5362C58746F00C8EE36 /* MediaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9F5352C58746F00C8EE36 /* MediaNavigationController.swift */; };
 		83F9F5392C59DBCA00C8EE36 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 83F9F5382C59DBCA00C8EE36 /* Alamofire */; };
 		83F9F53B2C59DBCA00C8EE36 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 83F9F53A2C59DBCA00C8EE36 /* AlamofireDynamic */; };
+		83F9F53E2C5A845900C8EE36 /* NIKEA.otf in Resources */ = {isa = PBXBuildFile; fileRef = 83F9F53D2C5A845900C8EE36 /* NIKEA.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		832343AB2C5488A500D7A632 /* MediaVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MediaVC.storyboard; sourceTree = "<group>"; };
 		832343AD2C5488D900D7A632 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		83F9F5352C58746F00C8EE36 /* MediaNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaNavigationController.swift; sourceTree = "<group>"; };
+		83F9F53D2C5A845900C8EE36 /* NIKEA.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NIKEA.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +82,10 @@
 			children = (
 				832343A02C54721900D7A632 /* Networking */,
 				832343802C546CB500D7A632 /* AppDelegate.swift */,
+				83F9F53C2C5A844300C8EE36 /* Resources */,
 				832343822C546CB500D7A632 /* SceneDelegate.swift */,
 				832343A82C54887100D7A632 /* MediaVC */,
 				832343982C54707700D7A632 /* MediaCollectionVC */,
-				832343892C546CB600D7A632 /* Assets.xcassets */,
-				8323438B2C546CB600D7A632 /* LaunchScreen.storyboard */,
 				8323438E2C546CB600D7A632 /* Info.plist */,
 			);
 			path = mediabase;
@@ -118,6 +119,16 @@
 				832343AD2C5488D900D7A632 /* PhotoViewModel.swift */,
 			);
 			path = MediaVC;
+			sourceTree = "<group>";
+		};
+		83F9F53C2C5A844300C8EE36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				83F9F53D2C5A845900C8EE36 /* NIKEA.otf */,
+				8323438B2C546CB600D7A632 /* LaunchScreen.storyboard */,
+				832343892C546CB600D7A632 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				8323438A2C546CB600D7A632 /* Assets.xcassets in Resources */,
 				8323438D2C546CB600D7A632 /* Base in Resources */,
 				832343972C546D7600D7A632 /* MediaCollectionVC.storyboard in Resources */,
+				83F9F53E2C5A845900C8EE36 /* NIKEA.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
