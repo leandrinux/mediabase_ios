@@ -7,6 +7,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="HCx-hf-8GL">
+            <objects>
+                <navigationController id="dCB-4i-QzY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xlB-p5-9IJ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="TKH-DW-SYh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Wt-2n-LeC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-833" y="-27"/>
+        </scene>
         <!--MediaVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -16,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Wm-Bx-lQ6">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hzp-r4-Uvb"/>
@@ -28,6 +44,14 @@
                             <constraint firstItem="2Wm-Bx-lQ6" firstAttribute="top" secondItem="Hzp-r4-Uvb" secondAttribute="top" id="fs0-XG-wnj"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="FsS-7l-Erq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="5xV-9T-dzw">
+                            <connections>
+                                <action selector="deleteMedia" destination="Y6W-OH-hqX" id="htM-4C-DS9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="2Wm-Bx-lQ6" id="EZP-U5-jx6"/>
                     </connections>

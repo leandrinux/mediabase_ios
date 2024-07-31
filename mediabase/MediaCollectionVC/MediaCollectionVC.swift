@@ -8,6 +8,7 @@
 import UIKit
 import PhotosUI
 import SnapKit
+import SDWebImage
 
 class MediaCollectionVC: UIViewController {
     
@@ -19,6 +20,8 @@ class MediaCollectionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SDImageCache.shared.config.maxDiskAge = 30
+        SDImageCache.shared.deleteOldFiles()
         viewModel.delegate = self
         
         // Pull to refresh
@@ -103,9 +106,9 @@ extension MediaCollectionVC: UICollectionViewDelegateFlowLayout {
 extension MediaCollectionVC: MediaCollectionThumbnailDelegate {
     
     func didTouchMedia(media: Media) {
-        guard let MediaVC = MediaVC.create() else { return }
-        MediaVC.media = media
-        navigationController?.pushViewController(MediaVC, animated: true)
+        guard let vc = MediaVC.create(media) else { return }
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -130,9 +133,13 @@ extension MediaCollectionVC: PHPickerViewControllerDelegate {
 }
 
 extension MediaCollectionVC: MediaCollectionViewModelDelegate {
-    
     func reloadMedia() {
         reloadCollectionView()
     }
-    
+}
+
+extension MediaCollectionVC: MediaVCDelegate {
+    func mediaDismissedAfterDelete() {
+        reloadCollectionView()
+    }
 }

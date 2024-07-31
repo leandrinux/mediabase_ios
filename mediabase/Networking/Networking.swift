@@ -11,6 +11,7 @@ import Alamofire
 enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
+    case delete = "DELETE"
 }
 
 class Networking: NSObject {
@@ -47,10 +48,13 @@ class Networking: NSObject {
                 completion(.failure(NSError(domain: "Invalid response", code: 0)))
                 return
             }
+            let decodedResponse = try JSONDecoder().decode(U.self, from: data)
             if httpResponse.statusCode < 400 {
-                let decodedResponse = try JSONDecoder().decode(U.self, from: data)
                 completion(.success(decodedResponse))
+            } else {
+                completion(.failure(NSError(domain: "Server error", code: 0)))
             }
+                
         } catch {
             completion(.failure(error))
         }

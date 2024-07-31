@@ -15,12 +15,10 @@ class MediaCollectionViewModel {
     var media: [Media]? {
         didSet {
             guard let media = media else { return }
-            print("Retrieved \(media.count) media")
         }
     }
     
     func fetchAll() async {
-        print("Fetching all media")
         let endpoint = "\(Networking.baseURL)/media"
         await Networking().sendJsonRequest(method: .get, endpoint: endpoint, arguments: FetchMediaRequest()) { (result: Result<[Media], Error>) in
             switch result {
