@@ -13,23 +13,28 @@ class MediaCollectionVC: UIViewController {
     @IBOutlet var collectionView: UICollectionView?
 
     let viewModel = MediaCollectionViewModel()
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         collectionView?.delegate = self
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        collectionView?.addSubview(refreshControl) // not required when using UITableViewController
+        reloadCollectionView()
+    }
+    
+    func reloadCollectionView() {
         Task {
             await viewModel.fetchAll()
             DispatchQueue.main.async {
-                self.updateCollectionView()
+                self.collectionView?.reloadData()
+                self.refreshControl.endRefreshing()
             }
         }
     }
-
-    func updateCollectionView() {
-        print("Updating collection view")
-        collectionView?.reloadData()
-    }
-    
+   
     @IBAction func doAddMedia() {
         var config = PHPickerConfiguration()
         config.filter = PHPickerFilter.images
@@ -37,6 +42,10 @@ class MediaCollectionVC: UIViewController {
         let picker = PHPickerViewController(configuration: config)
         picker.delegate = self
         self.navigationController?.present(picker, animated: true)
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+       reloadCollectionView()
     }
 
 }
@@ -97,6 +106,14 @@ extension MediaCollectionVC: PHPickerViewControllerDelegate {
             }
         }
         picker.dismiss(animated: true)
+    }
+    
+}
+
+extension MediaCollectionVC: MediaCollectionViewModelDelegate {
+    
+    func reloadMedia() {
+        reloadCollectionView()
     }
     
 }

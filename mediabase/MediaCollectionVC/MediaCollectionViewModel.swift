@@ -8,32 +8,9 @@
 import Foundation
 import Alamofire
 
-struct FetchMediaRequest: Codable {
-    
-}
-
-struct Media: Hashable, Codable {
-    let ID: Int
-    var latitude: Double?
-    var longitude: Double?
-    
-    private enum CodingKeys: String, CodingKey {
-        case ID = "media_id"
-        case latitude
-        case longitude
-    }
-}
-
-struct UploadMediaResponse: Codable {
-    let ID: Int
-    let message: String
-    private enum CodingKeys: String, CodingKey {
-        case ID = "media_id"
-        case message
-    }
-}
-
 class MediaCollectionViewModel {
+    
+    weak var delegate: MediaCollectionViewModelDelegate?
     
     var media: [Media]? {
         didSet {
@@ -61,13 +38,41 @@ class MediaCollectionViewModel {
             multipartFormData.append(imageData, withName: "media", fileName: "file.png", mimeType: "image/jpeg")
         }, to: endpoint)
         .uploadProgress(queue: .main, closure: { progress in
-            //Current upload progress of file
             print("Upload Progress: \(progress.fractionCompleted)")
         })
         .response { data in
             print(data)
+            self.delegate?.reloadMedia()
         }
-
     }
     
+}
+
+protocol MediaCollectionViewModelDelegate: AnyObject {
+    func reloadMedia()
+}
+
+struct FetchMediaRequest: Codable {
+    
+}
+
+struct Media: Hashable, Codable {
+    let ID: Int
+    var latitude: Double?
+    var longitude: Double?
+    
+    private enum CodingKeys: String, CodingKey {
+        case ID = "media_id"
+        case latitude
+        case longitude
+    }
+}
+
+struct UploadMediaResponse: Codable {
+    let ID: Int
+    let message: String
+    private enum CodingKeys: String, CodingKey {
+        case ID = "media_id"
+        case message
+    }
 }
