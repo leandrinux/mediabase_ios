@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 class MediaCollectionVC: UIViewController {
     
@@ -27,6 +28,15 @@ class MediaCollectionVC: UIViewController {
     func updateCollectionView() {
         print("Updating collection view")
         collectionView?.reloadData()
+    }
+    
+    @IBAction func doAddMedia() {
+        var config = PHPickerConfiguration()
+        config.filter = PHPickerFilter.images
+        config.selectionLimit = 1
+        let picker = PHPickerViewController(configuration: config)
+        picker.delegate = self
+        self.navigationController?.present(picker, animated: true)
     }
 
 }
@@ -56,7 +66,7 @@ extension MediaCollectionVC: UICollectionViewDelegate {
 extension MediaCollectionVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let sideLength = (collectionView.frame.size.width - 2) / 3 
+        let sideLength = (collectionView.frame.size.width - 2) / 3
         return CGSize(width: sideLength, height: sideLength)
     }
     
@@ -68,6 +78,25 @@ extension MediaCollectionVC: MediaCollectionThumbnailDelegate {
         guard let MediaVC = MediaVC.create() else { return }
         MediaVC.media = media
         navigationController?.pushViewController(MediaVC, animated: true)
+    }
+    
+}
+
+extension MediaCollectionVC: PHPickerViewControllerDelegate {
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        for result in results {
+            result.itemProvider.loadObject(ofClass: UIImage.self) { (object, error) in
+                guard
+                    let image = object as? UIImage,
+                    let imageData = image.jpegData(compressionQuality: 1)
+                else { return }
+                Task {
+                    await self.viewModel.uploadMedia(imageData)
+                }
+            }
+        }
+        picker.dismiss(animated: true)
     }
     
 }

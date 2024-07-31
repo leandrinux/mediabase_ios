@@ -118,6 +118,9 @@
                     <navigationItem key="navigationItem" title="Mediabase" id="K2M-fd-K7q">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IWz-zu-7C1">
                             <color key="tintColor" systemColor="systemTealColor"/>
+                            <connections>
+                                <action selector="doAddMedia" destination="Y6W-OH-hqX" id="Vq9-qT-xY2"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
