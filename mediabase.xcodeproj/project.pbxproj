@@ -23,9 +23,7 @@
 		832343AE2C5488D900D7A632 /* MediaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343AD2C5488D900D7A632 /* MediaViewModel.swift */; };
 		832EFA352C5A940A008B7071 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 832EFA342C5A940A008B7071 /* Alamofire */; };
 		832EFA382C5A9415008B7071 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 832EFA372C5A9415008B7071 /* SnapKit */; };
-		832EFA3B2C5A94A2008B7071 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 832EFA3A2C5A94A2008B7071 /* AlamofireDynamic */; };
 		832EFA3D2C5A94A2008B7071 /* AlamofireDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 832EFA3A2C5A94A2008B7071 /* AlamofireDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		832EFA3F2C5A94A5008B7071 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 832EFA3E2C5A94A5008B7071 /* SnapKit-Dynamic */; };
 		832EFA402C5A94A5008B7071 /* SnapKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 832EFA3E2C5A94A5008B7071 /* SnapKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		83F9F5362C58746F00C8EE36 /* MediaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9F5352C58746F00C8EE36 /* MediaNavigationController.swift */; };
 		83F9F53E2C5A845900C8EE36 /* NIKEA.otf in Resources */ = {isa = PBXBuildFile; fileRef = 83F9F53D2C5A845900C8EE36 /* NIKEA.otf */; };
@@ -72,10 +70,8 @@
 			files = (
 				832EFA352C5A940A008B7071 /* Alamofire in Frameworks */,
 				832EFA382C5A9415008B7071 /* SnapKit in Frameworks */,
-				832EFA3B2C5A94A2008B7071 /* AlamofireDynamic in Frameworks */,
 				832343A72C5480B400D7A632 /* SDWebImageMapKit in Frameworks */,
 				832343A52C5480B400D7A632 /* SDWebImage in Frameworks */,
-				832EFA3F2C5A94A5008B7071 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

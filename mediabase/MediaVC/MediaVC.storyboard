@@ -31,17 +31,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Wm-Bx-lQ6">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wm-Bx-lQ6">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopDown" translatesAutoresizingMaskIntoConstraints="NO" id="mi7-TD-7V2">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="vRN-MY-PQq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownTop" translatesAutoresizingMaskIntoConstraints="NO" id="otJ-A2-Lrx">
+                                <rect key="frame" x="0.0" y="724" width="393" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="RdY-Ld-dkR"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hzp-r4-Uvb"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="mi7-TD-7V2" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="DUu-6v-h89"/>
+                            <constraint firstItem="otJ-A2-Lrx" firstAttribute="trailing" secondItem="Hzp-r4-Uvb" secondAttribute="trailing" id="E04-aZ-WVN"/>
+                            <constraint firstItem="otJ-A2-Lrx" firstAttribute="leading" secondItem="Hzp-r4-Uvb" secondAttribute="leading" id="JmW-Ac-hz5"/>
                             <constraint firstItem="2Wm-Bx-lQ6" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="KF0-s7-Gv1"/>
-                            <constraint firstItem="Hzp-r4-Uvb" firstAttribute="bottom" secondItem="2Wm-Bx-lQ6" secondAttribute="bottom" id="OUO-TN-5Lw"/>
+                            <constraint firstAttribute="bottom" secondItem="2Wm-Bx-lQ6" secondAttribute="bottom" id="OUO-TN-5Lw"/>
+                            <constraint firstItem="mi7-TD-7V2" firstAttribute="trailing" secondItem="Hzp-r4-Uvb" secondAttribute="trailing" id="Oaf-li-coE"/>
+                            <constraint firstAttribute="bottom" secondItem="otJ-A2-Lrx" secondAttribute="bottom" id="ZXd-08-OIN"/>
                             <constraint firstAttribute="trailing" secondItem="2Wm-Bx-lQ6" secondAttribute="trailing" id="bhB-oZ-RiQ"/>
-                            <constraint firstItem="2Wm-Bx-lQ6" firstAttribute="top" secondItem="Hzp-r4-Uvb" secondAttribute="top" id="fs0-XG-wnj"/>
+                            <constraint firstItem="2Wm-Bx-lQ6" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="fs0-XG-wnj"/>
+                            <constraint firstItem="mi7-TD-7V2" firstAttribute="leading" secondItem="Hzp-r4-Uvb" secondAttribute="leading" id="qMZ-mB-1A2"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -61,4 +79,8 @@
             <point key="canvasLocation" x="105" y="-27"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DownTop" width="104" height="234"/>
+        <image name="TopDown" width="104" height="234"/>
+    </resources>
 </document>

@@ -86,10 +86,16 @@
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="p3g-qT-cAD"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopGradient" translatesAutoresizingMaskIntoConstraints="NO" id="WiR-z3-6b3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopDown" translatesAutoresizingMaskIntoConstraints="NO" id="WiR-z3-6b3">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="qD4-am-Jvn"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DownTop" translatesAutoresizingMaskIntoConstraints="NO" id="f3Y-AV-Uc9">
+                                <rect key="frame" x="0.0" y="724" width="393" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9QT-o9-Geu"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -100,8 +106,11 @@
                             <constraint firstItem="WmB-cw-zMm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6BR-Yj-RY7"/>
                             <constraint firstItem="WiR-z3-6b3" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="B7M-tl-2lS"/>
                             <constraint firstAttribute="bottom" secondItem="WmB-cw-zMm" secondAttribute="bottom" id="Seh-0L-k7A"/>
+                            <constraint firstItem="f3Y-AV-Uc9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="U5c-Iy-q5d"/>
+                            <constraint firstAttribute="bottom" secondItem="f3Y-AV-Uc9" secondAttribute="bottom" id="XuY-yI-iKI"/>
                             <constraint firstItem="WiR-z3-6b3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ii3-Zk-VYr"/>
                             <constraint firstAttribute="top" secondItem="WmB-cw-zMm" secondAttribute="top" id="osc-mU-iRm"/>
+                            <constraint firstItem="f3Y-AV-Uc9" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="qxf-23-dCg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WmB-cw-zMm" secondAttribute="trailing" id="vl7-9N-7Zd"/>
                         </constraints>
                     </view>
@@ -155,8 +164,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DownTop" width="104" height="234"/>
         <image name="PhotoStack" width="512" height="512"/>
-        <image name="TopGradient" width="99" height="280"/>
+        <image name="TopDown" width="104" height="234"/>
         <systemColor name="systemTealColor">
             <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
