@@ -11,6 +11,7 @@ import SDWebImage
 class MediaVC: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView?
+    @IBOutlet weak var tagsCollectionView: UICollectionView?
     
     let viewModel = MediaViewModel()
     
@@ -29,9 +30,12 @@ class MediaVC: UIViewController {
     }
 
     override func viewDidLoad() {
+        viewModel.getMedia {
+            self.tagsCollectionView?.dataSource = self
+            self.tagsCollectionView?.reloadData()
+        }
         guard let media = media else { return }
-        let id = media.id.uuidString.lowercased()
-        let url = URL(string: "\(MediabaseAPI.baseURL)/file?id=\(id)")
+        let url = URL(string: "\(MediabaseAPI.baseURL)/file?id=\(media.id)")
         imageView?.sd_setImage(with: url)
     }
     
@@ -50,4 +54,18 @@ class MediaVC: UIViewController {
 
 protocol MediaVCDelegate: AnyObject {
     func mediaDismissedAfterDelete()
+}
+
+extension MediaVC: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.media?.tags?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        return cell
+    }
+    
+    
 }

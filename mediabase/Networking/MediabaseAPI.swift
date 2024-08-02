@@ -20,12 +20,18 @@ class MediabaseAPI: NSObject {
         }
     }
 
+    func getMedia(_ id: String, _ completion: @escaping (Result<Media, Error>) -> Void) async  {
+        let endpoint = "\(MediabaseAPI.baseURL)/media"
+        await sendJsonRequest(method: .get, endpoint: endpoint, arguments: SimpleRequest(id: id)) { (result: Result<Media, Error>) in
+            completion(result)
+        }
+    }
+
     func deleteMedia(_ media: Media, completion: @escaping (Result<Bool, Error>) -> Void) async {
         let endpoint = "\(MediabaseAPI.baseURL)/media"
-        let id = media.id.uuidString.lowercased()
         AF.request(endpoint,
                    method: .delete,
-                   parameters: SimpleRequest(id: id),
+                   parameters: SimpleRequest(id: media.id),
                    encoder: URLEncodedFormParameterEncoder.default).response { result in
             guard let response = result.response else { return }
             if response.statusCode < 400 {
@@ -105,20 +111,21 @@ extension MediabaseAPI: URLSessionDelegate { }
 // MARK: Model entities
 
 struct Media: Hashable, Codable {
-    let id: UUID
+    let id: String
     var latitude: Double?
     var longitude: Double?
+    var tags: [String]?
 }
 
 // MARK: Request and response struct
 
 struct EmptyRequest: Codable { }
 
-struct SimpleRequest: Encodable {
+struct SimpleRequest: Codable {
     let id: String
 }
 
 struct UploadMediaResponse: Codable {
-    let id: UUID
+    let id: String
     let message: String
 }

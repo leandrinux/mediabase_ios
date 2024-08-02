@@ -19,4 +19,20 @@ class MediaViewModel {
         }
     }
     
+    func getMedia(_ completion: @escaping () -> Void) {
+        Task {
+            guard let id = self.media?.id else { return }
+            await MediabaseAPI.shared.getMedia(id) { result in
+                switch result {
+                    
+                case .success( let media ):
+                    self.media = media
+                    
+                case .failure( let error ):
+                    debugPrint(error)
+                }
+            }
+        }
+    }
+    
 }
