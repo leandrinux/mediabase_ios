@@ -22,7 +22,8 @@ class MediaCollectionThumbnailCell: UICollectionViewCell {
     var media: Media? {
         didSet {
             guard let media = media else { return }
-            let url = URL(string: "\(MediabaseAPI.baseURL)/thumb?id=\(media.id)")
+            let id = media.id.uuidString.lowercased()
+            let url = URL(string: "\(MediabaseAPI.baseURL)/thumb?id=\(id)")
             imageView?.sd_setImage(with: url)
         }
     }
