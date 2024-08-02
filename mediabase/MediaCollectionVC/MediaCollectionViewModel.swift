@@ -6,71 +6,35 @@
 //
 
 import Foundation
-import Alamofire
 
 class MediaCollectionViewModel {
     
     weak var delegate: MediaCollectionViewModelDelegate?
     
-    var media: [Media]? {
-        didSet {
-            guard let media = media else { return }
-        }
-    }
+    var media: [Media]?
     
-    func fetchAll() async {
-        let endpoint = "\(Networking.baseURL)/media"
-        await Networking().sendJsonRequest(method: .get, endpoint: endpoint, arguments: FetchMediaRequest()) { (result: Result<[Media], Error>) in
-            switch result {
-            case .success(let responseModel):
-                self.media = responseModel
-            case .failure(let error):
-                debugPrint(error)
+    func getAllMedia(_ completion: @escaping () -> Void) {
+        Task {
+            await MediabaseAPI.shared.getAllMedia { result in
+                switch result {
+                case .success( let media ):
+                    self.media = media
+                case .failure( let error ):
+                    debugPrint(error)
+                }
+                completion()
             }
         }
     }
-    
-    func uploadMedia(_ imageData: Data) async {
-        let endpoint = "\(Networking.baseURL)/media"
-        AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(imageData, withName: "media", fileName: "file.png", mimeType: "image/jpeg")
-        }, to: endpoint)
-        .uploadProgress(queue: .main, closure: { progress in
-            print("Upload Progress: \(progress.fractionCompleted)")
-        })
-        .response { data in
-            print(data)
-            self.delegate?.reloadMedia()
+
+    func uploadMedia(_ imageData: Data, completion: @escaping () -> Void) {
+        Task {
         }
     }
-    
+
 }
 
 protocol MediaCollectionViewModelDelegate: AnyObject {
     func reloadMedia()
 }
 
-struct FetchMediaRequest: Codable {
-    
-}
-
-struct Media: Hashable, Codable {
-    let ID: Int
-    var latitude: Double?
-    var longitude: Double?
-    
-    private enum CodingKeys: String, CodingKey {
-        case ID = "media_id"
-        case latitude
-        case longitude
-    }
-}
-
-struct UploadMediaResponse: Codable {
-    let ID: Int
-    let message: String
-    private enum CodingKeys: String, CodingKey {
-        case ID = "media_id"
-        case message
-    }
-}

@@ -30,7 +30,7 @@ class MediaVC: UIViewController {
 
     override func viewDidLoad() {
         guard let media = media else { return }
-        let url = URL(string: "\(Networking.baseURL)/file?id=\(media.ID)")
+        let url = URL(string: "\(MediabaseAPI.baseURL)/file?id=\(media.id)")
         imageView?.sd_setImage(with: url)
     }
     

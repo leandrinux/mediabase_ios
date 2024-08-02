@@ -47,8 +47,7 @@ class MediaCollectionVC: UIViewController {
     }
     
     func reloadCollectionView() {
-        Task {
-            await viewModel.fetchAll()
+        viewModel.getAllMedia {
             DispatchQueue.main.async {
                 self.emptyView?.isHidden = (self.viewModel.media?.count ?? 0) > 0
                 self.collectionView?.reloadData()
@@ -122,8 +121,8 @@ extension MediaCollectionVC: PHPickerViewControllerDelegate {
                     let image = object as? UIImage,
                     let imageData = image.jpegData(compressionQuality: 1)
                 else { return }
-                Task {
-                    await self.viewModel.uploadMedia(imageData)
+                self.viewModel.uploadMedia(imageData) {
+                    self.reloadCollectionView()
                 }
             }
         }
