@@ -53,20 +53,43 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="e5J-hS-aDS"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jg7-gT-ggU">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="8" id="Jg7-gT-ggU">
                                     <size key="itemSize" width="100" height="40"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aRB-JG-wf8">
-                                        <rect key="frame" x="0.0" y="2" width="100" height="40"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCell" id="aRB-JG-wf8" customClass="MediaTagCollectionViewCell" customModule="mediabase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="10" width="50.333333333333336" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nfD-ts-px5">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bq6-Ri-Ehi">
+                                                    <rect key="frame" x="8" y="4" width="34.333333333333336" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Bq6-Ri-Ehi" secondAttribute="bottom" constant="4" id="3pb-Z4-zG2"/>
+                                                <constraint firstItem="Bq6-Ri-Ehi" firstAttribute="top" secondItem="nfD-ts-px5" secondAttribute="top" constant="4" id="Hnl-Fk-uqu"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bq6-Ri-Ehi" secondAttribute="trailing" constant="8" id="Iru-t0-eVZ"/>
+                                                <constraint firstItem="Bq6-Ri-Ehi" firstAttribute="leading" secondItem="nfD-ts-px5" secondAttribute="leading" constant="8" id="WFb-bD-bgp"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.24158855736976892" green="0.66549210695876293" blue="0.30515640132986716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="tagName" destination="Bq6-Ri-Ehi" id="txj-WT-Lve"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

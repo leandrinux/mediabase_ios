@@ -27,6 +27,7 @@ class MediaViewModel {
                     
                 case .success( let media ):
                     self.media = media
+                    completion()
                     
                 case .failure( let error ):
                     debugPrint(error)

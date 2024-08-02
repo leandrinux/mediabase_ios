@@ -10,6 +10,7 @@
 		83007ED32C5C7FB400FA48EA /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 832EFA3A2C5A94A2008B7071 /* AlamofireDynamic */; };
 		83007ED42C5C7FB400FA48EA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 832EFA3E2C5A94A5008B7071 /* SnapKit-Dynamic */; };
 		83007ED62C5C805900FA48EA /* MediabaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83007ED52C5C805900FA48EA /* MediabaseAPI.swift */; };
+		83007ED82C5D240B00FA48EA /* MediaTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83007ED72C5D240B00FA48EA /* MediaTagCollectionViewCell.swift */; };
 		832343812C546CB500D7A632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343802C546CB500D7A632 /* AppDelegate.swift */; };
 		832343832C546CB500D7A632 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343822C546CB500D7A632 /* SceneDelegate.swift */; };
 		8323438A2C546CB600D7A632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 832343892C546CB600D7A632 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		83007ED52C5C805900FA48EA /* MediabaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediabaseAPI.swift; sourceTree = "<group>"; };
+		83007ED72C5D240B00FA48EA /* MediaTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		8323437D2C546CB500D7A632 /* mediabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mediabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		832343802C546CB500D7A632 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		832343822C546CB500D7A632 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				832343A92C54888700D7A632 /* MediaVC.swift */,
+				83007ED72C5D240B00FA48EA /* MediaTagCollectionViewCell.swift */,
 				832343AB2C5488A500D7A632 /* MediaVC.storyboard */,
 				832343AD2C5488D900D7A632 /* MediaViewModel.swift */,
 			);
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83007ED82C5D240B00FA48EA /* MediaTagCollectionViewCell.swift in Sources */,
 				83007ED62C5C805900FA48EA /* MediabaseAPI.swift in Sources */,
 				832343952C546D0B00D7A632 /* MediaCollectionVC.swift in Sources */,
 				832343812C546CB500D7A632 /* AppDelegate.swift in Sources */,

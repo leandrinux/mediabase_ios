@@ -21,9 +21,23 @@ class MediabaseAPI: NSObject {
     }
 
     func getMedia(_ id: String, _ completion: @escaping (Result<Media, Error>) -> Void) async  {
-        let endpoint = "\(MediabaseAPI.baseURL)/media"
-        await sendJsonRequest(method: .get, endpoint: endpoint, arguments: SimpleRequest(id: id)) { (result: Result<Media, Error>) in
-            completion(result)
+        let endpoint = "\(MediabaseAPI.baseURL)/media"        
+        AF.request(endpoint,
+                   method: .get,
+                   parameters: SimpleRequest(id: id),
+                   encoder: URLEncodedFormParameterEncoder.default)
+        .validate(statusCode: 200 ..< 300)
+        .responseDecodable(of: Media.self) { response in
+            
+            switch response.result {
+                
+            case .success( let media ):
+                completion(.success(media))
+                
+            case .failure( let error ):
+                completion(.failure(error))
+                
+            }
         }
     }
 
@@ -125,7 +139,7 @@ struct SimpleRequest: Codable {
     let id: String
 }
 
-struct UploadMediaResponse: Codable {
+struct StandardResponse: Codable {
     let id: String
     let message: String
 }
