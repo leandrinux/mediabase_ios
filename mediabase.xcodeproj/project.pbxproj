@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83007ED32C5C7FB400FA48EA /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 832EFA3A2C5A94A2008B7071 /* AlamofireDynamic */; };
-		83007ED42C5C7FB400FA48EA /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 832EFA3E2C5A94A5008B7071 /* SnapKit-Dynamic */; };
 		83007ED62C5C805900FA48EA /* MediabaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83007ED52C5C805900FA48EA /* MediabaseAPI.swift */; };
 		83007ED82C5D240B00FA48EA /* MediaTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83007ED72C5D240B00FA48EA /* MediaTagCollectionViewCell.swift */; };
 		832343812C546CB500D7A632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832343802C546CB500D7A632 /* AppDelegate.swift */; };
@@ -72,8 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83007ED42C5C7FB400FA48EA /* SnapKit-Dynamic in Frameworks */,
-				83007ED32C5C7FB400FA48EA /* AlamofireDynamic in Frameworks */,
 				832EFA352C5A940A008B7071 /* Alamofire in Frameworks */,
 				832EFA382C5A9415008B7071 /* SnapKit in Frameworks */,
 				832343A72C5480B400D7A632 /* SDWebImageMapKit in Frameworks */,
