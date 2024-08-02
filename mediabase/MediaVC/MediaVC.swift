@@ -31,7 +31,6 @@ class MediaVC: UIViewController {
 
     override func viewDidLoad() {
         viewModel.getMedia {
-            debugPrint(self.viewModel.media)
             self.tagsCollectionView?.dataSource = self
             self.tagsCollectionView?.reloadData()
         }
