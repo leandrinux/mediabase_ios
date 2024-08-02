@@ -45,7 +45,6 @@ class MediabaseAPI: NSObject {
             print("Upload Progress: \(progress.fractionCompleted)")
         })
         .response { data in
-            print(data)
             completion()
         }
     }

@@ -74,7 +74,6 @@ class MediaCollectionVC: UIViewController {
 extension MediaCollectionVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(viewModel.media?.count ?? "no se")
         return viewModel.media?.count ?? 0
     }
     

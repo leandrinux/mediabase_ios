@@ -29,6 +29,9 @@ class MediaCollectionViewModel {
 
     func uploadMedia(_ imageData: Data, completion: @escaping () -> Void) {
         Task {
+            await MediabaseAPI.shared.uploadMedia(imageData) {
+                completion()
+            }
         }
     }
 
