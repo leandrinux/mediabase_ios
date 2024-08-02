@@ -21,11 +21,11 @@ class MediabaseAPI: NSObject {
     }
 
     func deleteMedia(_ media: Media, completion: @escaping (Result<Bool, Error>) -> Void) async {
-
         let endpoint = "\(MediabaseAPI.baseURL)/media"
+        let id = media.id.uuidString.lowercased()
         AF.request(endpoint,
                    method: .delete,
-                   parameters: SimpleRequest(id: media.id),
+                   parameters: SimpleRequest(id: id),
                    encoder: URLEncodedFormParameterEncoder.default).response { result in
             guard let response = result.response else { return }
             if response.statusCode < 400 {
@@ -115,7 +115,7 @@ struct Media: Hashable, Codable {
 struct EmptyRequest: Codable { }
 
 struct SimpleRequest: Encodable {
-    let id: UUID
+    let id: String
 }
 
 struct UploadMediaResponse: Codable {
