@@ -49,8 +49,10 @@ class MediaCollectionVC: UIViewController {
     func reloadCollectionView() {
         viewModel.getAllMedia {
             DispatchQueue.main.async {
-                self.emptyView?.isHidden = (self.viewModel.media?.count ?? 0) > 0
-                self.collectionView?.reloadData()
+                self.emptyView?.isHidden = (self.viewModel.media?.count ?? 0) > 0               
+                self.collectionView?.performBatchUpdates({
+                    self.collectionView?.reloadSections(IndexSet(integer: 0))
+                })
                 self.refreshControl.endRefreshing()
             }
         }
