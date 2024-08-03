@@ -50,6 +50,14 @@ class MediaVC: UIViewController {
         }
     }
     
+    @IBAction func goBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func showInfo() {
+        print("TODO: Show media info")
+    }
+    
 }
 
 protocol MediaVCDelegate: AnyObject {
