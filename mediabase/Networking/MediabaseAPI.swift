@@ -21,10 +21,10 @@ class MediabaseAPI: NSObject {
     }
 
     func getMedia(_ id: String, _ completion: @escaping (Result<Media, Error>) -> Void) async  {
-        let endpoint = "\(MediabaseAPI.baseURL)/media"        
+        let endpoint = "\(MediabaseAPI.baseURL)/media/\(id)"
         AF.request(endpoint,
                    method: .get,
-                   parameters: SimpleRequest(id: id),
+                   parameters: EmptyRequest(),
                    encoder: URLEncodedFormParameterEncoder.default)
         .validate(statusCode: 200 ..< 300)
         .responseDecodable(of: Media.self) { response in
@@ -126,9 +126,18 @@ extension MediabaseAPI: URLSessionDelegate { }
 
 struct Media: Hashable, Codable {
     let id: String
+    var mediaType: String?
     var latitude: Double?
     var longitude: Double?
     var tags: [String]?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case mediaType = "media_type"
+        case latitude = "latitude"
+        case longitude = "longitude"
+        case tags = "tags"
+    }
 }
 
 // MARK: Request and response struct

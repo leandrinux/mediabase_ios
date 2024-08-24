@@ -35,7 +35,7 @@ class MediaVC: UIViewController {
             self.tagsCollectionView?.reloadData()
         }
         guard let media = media else { return }
-        let url = URL(string: "\(MediabaseAPI.baseURL)/file?id=\(media.id)")
+        let url = URL(string: "\(MediabaseAPI.baseURL)/media/\(media.id)/file")
         imageView?.sd_setImage(with: url)
     }
     
