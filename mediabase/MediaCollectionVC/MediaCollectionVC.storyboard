@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tags-->
+        <!--View Controller-->
         <scene sceneID="alA-DH-e7G">
             <objects>
                 <viewController id="nrQ-dq-GrP" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <viewLayoutGuide key="safeArea" id="HKU-hC-Id0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tags" id="yo3-LI-BdE"/>
+                    <tabBarItem key="tabBarItem" title="" image="TagsIcon" id="yo3-LI-BdE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wy-ec-SH5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,11 +43,11 @@
             </objects>
             <point key="canvasLocation" x="-1895" y="345"/>
         </scene>
-        <!--Media-->
+        <!--Media Navigation Controller-->
         <scene sceneID="Wjd-b7-QTf">
             <objects>
                 <navigationController id="ViC-qK-VyH" customClass="MediaNavigationController" customModule="mediabase" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Media" id="zhM-Ml-TeP"/>
+                    <tabBarItem key="tabBarItem" image="PhotoStackIcon" id="zhM-Ml-TeP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CqS-iL-8f9">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -212,13 +212,15 @@
     <resources>
         <image name="DownTop" width="104" height="234"/>
         <image name="PhotoStack" width="512" height="512"/>
+        <image name="PhotoStackIcon" width="42" height="42"/>
         <image name="Play" width="512" height="512"/>
+        <image name="TagsIcon" width="42" height="42"/>
         <image name="TopDown" width="104" height="234"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
