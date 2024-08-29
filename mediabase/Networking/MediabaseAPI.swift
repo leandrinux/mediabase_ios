@@ -126,14 +126,14 @@ extension MediabaseAPI: URLSessionDelegate { }
 
 struct Media: Hashable, Codable {
     let id: String
-    var mediaType: String?
+    var type: String?
     var latitude: Double?
     var longitude: Double?
     var tags: [String]?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
-        case mediaType = "media_type"
+        case type = "media_type"
         case latitude = "latitude"
         case longitude = "longitude"
         case tags = "tags"

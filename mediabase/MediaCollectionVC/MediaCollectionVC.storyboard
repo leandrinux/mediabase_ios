@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ViC-qK-VyH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AUD-Sw-gFa">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -9,10 +9,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Media Navigation Controller-->
+        <!--Tags-->
+        <scene sceneID="alA-DH-e7G">
+            <objects>
+                <viewController id="nrQ-dq-GrP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5xW-BP-hmP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HKU-hC-Id0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tags" id="yo3-LI-BdE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0wy-ec-SH5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-708" y="770"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="oDp-Ac-jt7">
+            <objects>
+                <tabBarController id="AUD-Sw-gFa" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="chu-93-esB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ViC-qK-VyH" kind="relationship" relationship="viewControllers" id="3NU-Tj-Rmj"/>
+                        <segue destination="nrQ-dq-GrP" kind="relationship" relationship="viewControllers" id="DOw-cw-KTW"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0wt-zS-1Oq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1895" y="345"/>
+        </scene>
+        <!--Media-->
         <scene sceneID="Wjd-b7-QTf">
             <objects>
                 <navigationController id="ViC-qK-VyH" customClass="MediaNavigationController" customModule="mediabase" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Media" id="zhM-Ml-TeP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CqS-iL-8f9">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -64,12 +99,22 @@
                                                         <action selector="doTouch" destination="KYk-Te-4nN" eventType="touchUpInside" id="aa6-2A-Fmf"/>
                                                     </connections>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Play" translatesAutoresizingMaskIntoConstraints="NO" id="gCr-nX-XzI">
+                                                    <rect key="frame" x="146" y="143" width="24" height="24"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="cT7-8B-E2X"/>
+                                                        <constraint firstAttribute="width" constant="24" id="hCq-FA-wfp"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="5cY-BU-lSc" firstAttribute="leading" secondItem="v46-gU-BwF" secondAttribute="leading" id="2aO-RW-cK2"/>
                                                 <constraint firstItem="6Ci-sw-VKY" firstAttribute="leading" secondItem="v46-gU-BwF" secondAttribute="leading" id="6wP-zK-u8b"/>
                                                 <constraint firstItem="5cY-BU-lSc" firstAttribute="top" secondItem="v46-gU-BwF" secondAttribute="top" id="BU8-5V-qYs"/>
+                                                <constraint firstAttribute="trailing" secondItem="gCr-nX-XzI" secondAttribute="trailing" constant="10" id="WqK-BT-YYd"/>
                                                 <constraint firstAttribute="trailing" secondItem="5cY-BU-lSc" secondAttribute="trailing" id="ZmR-Ar-UCx"/>
+                                                <constraint firstAttribute="bottom" secondItem="gCr-nX-XzI" secondAttribute="bottom" constant="10" id="ac5-sf-A6d"/>
                                                 <constraint firstItem="6Ci-sw-VKY" firstAttribute="top" secondItem="v46-gU-BwF" secondAttribute="top" id="aiy-nM-Qhh"/>
                                                 <constraint firstAttribute="bottom" secondItem="6Ci-sw-VKY" secondAttribute="bottom" id="aoL-zu-Vmn"/>
                                                 <constraint firstAttribute="trailing" secondItem="6Ci-sw-VKY" secondAttribute="trailing" id="bzX-AE-qjb"/>
@@ -78,6 +123,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="180" height="177"/>
                                         <connections>
+                                            <outlet property="icon" destination="gCr-nX-XzI" id="bdi-iR-xza"/>
                                             <outlet property="imageView" destination="6Ci-sw-VKY" id="QR9-cG-eAo"/>
                                         </connections>
                                     </collectionViewCell>
@@ -166,7 +212,11 @@
     <resources>
         <image name="DownTop" width="104" height="234"/>
         <image name="PhotoStack" width="512" height="512"/>
+        <image name="Play" width="512" height="512"/>
         <image name="TopDown" width="104" height="234"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

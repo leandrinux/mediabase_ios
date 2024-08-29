@@ -11,6 +11,7 @@ import SDWebImage
 class MediaCollectionThumbnailCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView?
+    @IBOutlet weak var icon: UIImageView?
     
     weak var delegate: MediaCollectionThumbnailDelegate?
     
@@ -24,6 +25,7 @@ class MediaCollectionThumbnailCell: UICollectionViewCell {
             guard let media = media else { return }
             let url = URL(string: "\(MediabaseAPI.baseURL)/media/\(media.id)/preview")
             imageView?.sd_setImage(with: url)
+            icon?.isHidden = media.type != "video"
         }
     }
     
